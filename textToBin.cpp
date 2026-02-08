@@ -65,7 +65,6 @@ int main() {
   std::string binary_text = "";
 
   //file I/O
-  //added - start
   std::string filename = "input.txt";
   std::ifstream file(filename);
 
@@ -77,12 +76,6 @@ int main() {
   std::getline(file,text, '\0');
 
   file.close();
-
-
-  //added - end 
-
-
-
   
 
   std::vector<int> ascii_arr = strToASCII(text);
@@ -91,7 +84,7 @@ int main() {
     binary_text += decToBinary(c);
     binary_text += " ";
   }
-  std::cout << binary_text;
+  std::cout << binary_text << std::endl;
 
 }
 
