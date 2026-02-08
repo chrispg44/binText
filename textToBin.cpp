@@ -3,6 +3,7 @@
 #include <string>
 #include <vector> 
 #include <algorithm>
+#include <fstream>
 
 /*
 Process:
@@ -63,8 +64,25 @@ int main() {
   std::string text = "";
   std::string binary_text = "";
 
-  std::cout << "Enter text to convert: ";
-  std::getline(std::cin,text);
+  //file I/O
+  //added - start
+  std::string filename = "input.txt";
+  std::ifstream file(filename);
+
+  if (!file.is_open()) {
+    std::cerr << "Error: Could not open 'input.txt' file" << std::endl;
+    return 1;
+  }
+
+  std::getline(file,text, '\0');
+
+  file.close();
+
+
+  //added - end 
+
+
+
   
 
   std::vector<int> ascii_arr = strToASCII(text);
