@@ -2,4 +2,6 @@
 
 A fun side script to make sure you always meet the word limit.
 
+Character Encoding: ASCII
+
 
